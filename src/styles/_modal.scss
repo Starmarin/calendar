@@ -1,0 +1,130 @@
+.modal{
+    position: fixed;
+    z-index: 100;
+    background: white;
+    border-radius: 10px;
+    width: 80%;
+    top: 10vh; 
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    display: none;
+    .modal__actions {
+        padding: 1rem;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        .btn--passive, .btn--passiveEvent{
+            background-color: $white;
+            color: $bg;
+            border: none;
+            &:hover{
+                background-color: rgba($color: red, $alpha: 0.4);
+                color: $white;
+            }
+        }
+    }
+}
+
+.createEvent{
+    max-width: 50vw;
+    max-height: 80vh;
+    margin: 0 auto;
+    left: 25%;   
+    overflow-x: hidden; 
+    &__errors{
+        display: none;   
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6%;
+        color: red;
+        font-size: 1.3rem;
+        font-weight: 700; 
+        padding-top: 1rem;      
+        background-color: rgba($color: red, $alpha: 0.25);
+        text-align: center;
+        .message{
+            margin: 0;
+        }
+        .close{                     
+            position: absolute;
+            right: 1.5rem;
+            top: 15%;
+            color: red;
+            font-size: 2rem;
+            z-index: 9;
+        }
+    }
+    &__form{
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        label{
+            font-size: 1.5rem;
+            color: #222;
+            font-weight: 700;
+            width: 100%;
+        }
+        input, select{
+            border: 1px solid #dcdee2;
+            border-radius: 4px;
+            background-color: #fff;
+            outline: 0;
+            width: 100%;
+            min-height: 3rem;
+            color: #222;
+            font-weight: 700;
+            padding-left: 1rem;            
+        }
+        select{            
+            color: $bg;
+            font-weight: 700;
+            font-family: $OpenSans;
+            option{
+                color: #222;
+            }
+        }
+    }
+    
+}
+.calendar__modal{    
+    max-width: 20vw;
+    top: 30%;
+    left: 40%;
+    .modal__content{
+        text-align: center;
+        font-size: 1.4rem;
+    }
+}
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+  }
+  @keyframes slideUpIn {
+    0% { 
+        opacity: 0;
+        transform: translateY(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.visible {
+    display: block;
+    animation: slideUpIn 0.3s ease-out forwards;
+}
+.hide{
+    display: none;
+    animation: fade-slide-in 0.3s ease-out forwards;
+}

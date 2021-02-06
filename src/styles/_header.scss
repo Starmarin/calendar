@@ -1,0 +1,29 @@
+.header{
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+  background: $bg;
+  margin-bottom: 2rem;
+    .header__title{
+        font-size: 3rem;
+        color: $white;        
+    }
+    .filter__select{
+        font-family: $OpenSans;
+        font-weight: 700;
+        border: none;
+        border-bottom: $white 2px solid;
+        outline: none;
+        background: transparent;
+        color: $white;
+        text-transform: uppercase;
+        margin-right: 1rem;     
+        option{
+            color: $btn;
+            font-weight: 700;                
+        }
+
+    }
+}

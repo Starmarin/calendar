@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="./assets/img/favicon.ico" rel="icon" type="image/x-icon" />
+    <title>Tech Task Starostenko</title>
+<link href="main.css" rel="stylesheet"></head>
+
+<body class="meetingRoom">
+    <div class="backdrop"></div>
+    <header class="header">
+        <h1 class="header__title">Calendar</h1>
+        <div class="header__filter filter" id="filter">
+            <select class="filter__select">
+                <option>all events</option>
+                <option>Kate</option>
+                <option>Filip</option>
+                <option>Mary</option>
+                <option>Ben</option>
+                <option>Peter</option>
+            </select>
+            <button class="btn header__btn addEvent"> + new event</button>
+        </div>
+
+    </header>
+    <main class="calendar">
+        <div class="calendar__modal modal" id="delete-modal">
+            <h2 class="modal__title title">Are you sure?</h2>
+            <p class="modal__content">
+                Are you sure you want to delete this event? This action can't be made
+                undone!
+            </p>
+            <div class="modal__actions">
+                <button class="btn btn--passive">No (Cancel)</button>
+                <button class="btn btn--danger">Yes</button>
+            </div>
+        </div>
+        <section class="calendar__card">
+            <table class="table" id="table">
+                <tr class="table__title">
+                    <th>Time | Day</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                </tr>
+                <tr id="10:00">
+                    <th>10:00</th>
+                    <td id="1_1"></td>
+                    <td id="2_1"></td>
+                    <td id="3_1"></td>
+                    <td id="4_1"></td>
+                    <td id="5_1"></td>
+                </tr>
+                <tr id="11:00">
+                    <th>11:00</th>
+                    <td id="1_2"></td>
+                    <td id="2_2"></td>
+                    <td id="3_2"></td>
+                    <td id="4_2"></td>
+                    <td id="5_2"></td>
+                </tr>
+                <tr id="12:00">
+                    <th>12:00</th>
+                    <td id="1_3"></td>
+                    <td id="2_3"></td>
+                    <td id="3_3"></td>
+                    <td id="4_3"></td>
+                    <td id="5_3"></td>
+                </tr>
+                <tr id="13:00">
+                    <th>13:00</th>
+                    <td id="1_4"></td>
+                    <td id="2_4"></td>
+                    <td id="3_4"></td>
+                    <td id="4_4"></td>
+                    <td id="5_4"></td>
+                </tr>
+                <tr id="14:00">
+                    <th>14:00</th>
+                    <td id="1_5"></td>
+                    <td id="2_5"></td>
+                    <td id="3_5"></td>
+                    <td id="4_5"></td>
+                    <td id="5_5"></td>
+                </tr>
+                <tr id="15:00">
+                    <th>15:00</th>
+                    <td id="1_6"></td>
+                    <td id="2_6"></td>
+                    <td id="3_6"></td>
+                    <td id="4_6"></td>
+                    <td id="5_6"></td>
+                </tr>
+                <tr id="16:00">
+                    <th>16:00</th>
+                    <td id="1_7"></td>
+                    <td id="2_7"></td>
+                    <td id="3_7"></td>
+                    <td id="4_7"></td>
+                    <td id="5_7"></td>
+                </tr>
+                <tr id="17:00">
+                    <th>17:00</th>
+                    <td id="1_8"></td>
+                    <td id="2_8"></td>
+                    <td id="3_8"></td>
+                    <td id="4_8"></td>
+                    <td id="5_8"></td>
+                </tr>
+                <tr id="18:00">
+                    <th>18:00</th>
+                    <td id="1_9"></td>
+                    <td id="2_9"></td>
+                    <td id="3_9"></td>
+                    <td id="4_9"></td>
+                    <td id="5_9"></td>
+                </tr>
+            </table>
+        </section>
+        <siction class="createEvent modal">
+            <div class="createEvent__errors">
+                <p class="message"></p><span class="close">x</span>
+            </div>
+            <form class="createEvent__form" id="CreateEvent">
+                <h2 class="createEvent__title title">Create new event</h2>
+                <label for="eventName">Title:</label>
+                <input id="eventName" maxlength="50" type="text" placeholder="Enter title of your event...">
+                <label for="eventParticipants">Participants:</label>
+                <select id="eventParticipants" multiple>
+                    <optgroup label="all">
+                        <option>Kate</option>
+                        <option>Filip</option>
+                        <option>Mary</option>
+                        <option>Ben</option>
+                        <option>Peter</option>
+                    </optgroup>
+                </select>
+                <label for="eventDay">Day:</label>
+                <select id="eventDay">
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                </select>
+
+                <label for="eventTime">Time:</label>
+                <select id="eventTime">
+                    <option>10:00</option>
+                    <option>11:00</option>
+                    <option>12:00</option>
+                    <option>13:00</option>
+                    <option>14:00</option>
+                    <option>15:00</option>
+                    <option>16:00</option>
+                    <option>17:00</option>
+                    <option>18:00</option>
+                </select>
+                <div class="createEvent__actions modal__actions">
+                    <button class="btn btn--createEvent">Create</button>
+                    <button class="btn btn--passiveEvent">Cancel</button>
+                </div>
+            </form>
+        </siction>
+    </main>
+
+<script type="text/javascript" src="main.js"></script></body>
+
+</html>

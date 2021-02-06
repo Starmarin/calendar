@@ -1,0 +1,26 @@
+.title{
+    font-size: 2rem;
+    text-align: center;
+    color: $btn;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.btn{
+    background-color: $btn;
+    color: $white;
+    padding: 0.5rem;
+    border: 1px solid $btn;
+    outline: none;
+    min-height: 3rem;
+    font-weight: 700;
+    font-family: $OpenSans;
+    text-transform: uppercase;
+    border-radius: 6px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+    &:hover, &:focus{
+        border: 1px solid $white;
+        color: $btn;
+        background-color: $white;
+    }
+}
