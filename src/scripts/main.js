@@ -14,11 +14,12 @@ const filter = document.querySelector('.filter__select'),
     eventCreateBtn = document.querySelector('.btn--createEvent'),
     backdrop = document.querySelector('.backdrop'),
     item = document.querySelectorAll('td'),
+    hour = document.querySelectorAll('th'),
     createEventErrors = document.querySelector('.createEvent__errors'),
     errorMessage = document.querySelector('.message'),
     members = new SlimSelect({
         select: '#eventParticipants',
-        placeholder: 'Chouse at least 1 member',
+        placeholder: 'Select at least 1 member',
         showContent: 'down',
         selectByGroup: true
     });
@@ -189,6 +190,8 @@ item.forEach(i => i.addEventListener('click', () => {
     if (i.classList.contains('busy')) {
         makeVisible(deleteModal);
         return indexId = i.id;
+    } else {
+        makeVisible(createModal);
     }
 
 }));
